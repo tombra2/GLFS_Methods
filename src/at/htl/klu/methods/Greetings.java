@@ -1,8 +1,6 @@
 package at.htl.klu.methods;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.Locale;
 
 public class Greetings {
 	public static void main(String[] args) {
@@ -33,13 +31,12 @@ public class Greetings {
 		
 	}
 	
-	public static void sayHelloTime(){
+	public static void sayHelloTime() {
 		
 		int hours = LocalDateTime.now().getHour();
 		sayHello(hours);
-		
-	
-	
 	}
+	
+	
 }
 
