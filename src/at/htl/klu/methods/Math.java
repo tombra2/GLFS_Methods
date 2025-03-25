@@ -58,9 +58,6 @@ public class Math {
 
     }
 
-    public static boolean isPerfectNumber(int numa) {
-
-    }
 
     public static int[] onlyEven(int[] arryWithNums) {
         int[] arr = new int[arryWithNums.length];
