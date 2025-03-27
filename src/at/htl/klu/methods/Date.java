@@ -18,7 +18,6 @@ public class Date {
     public static boolean isMyNextBirthdayOnWeekend(LocalDate birthday) {
 
 
-
         return true;
     }
 
