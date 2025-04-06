@@ -8,6 +8,10 @@ public class Dices {
     int[] satiArr = staticAnalyse(arr);
     int[] statiNewArr = staticAnalyse(newArr);
     int[] sumArr = sumArr(satiArr, statiNewArr);
+    int min = getMinCountValue(sumArr);
+    System.out.println("Die Zahl kommt " + min + " am wenigsten vor");
+    int max = getMaxCountValue(sumArr);
+    System.out.println("Die Zahl kommt " + max + " am meisten vor");
 
     System.out.println(Arrays.toString(satiArr));
     System.out.println(Arrays.toString(statiNewArr));
