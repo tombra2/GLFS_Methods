@@ -1,42 +1,39 @@
-package at.htl.klu.methods;
-
 import java.time.LocalDateTime;
 
 public class Greetings {
-	public static void main(String[] args) {
-		
-		
-		sayHelloTime();
-	}
-	
-	
-	public static void sayHello (int a){
-		
-		if (a >0 && a < 5) {
-			System.out.println("Es ist Nacht");
-		} else if (a >= 6 && a < 11) {
-			System.out.println("Guten Morgen");
-		} else if (a >=11 && a < 15) {
-			System.out.println("Mahlzeit");
-		} else if (a >=15 && a < 20) {
-			System.out.println("Guten Tag");
-		} else if (a >=20 && a < 23) {
-			System.out.println("Gute Nacht");
-		} else if (a >= 23){
-			System.out.println("Falsche Zeitangabe");
-		} else {
-			System.out.println("Falsche Zeitangabe");
-		}
-		
-		
-	}
-	
-	public static void sayHelloTime() {
-		
-		int hours = LocalDateTime.now().getHour();
-		sayHello(hours);
-	}
-	
-	
-}
+  public static void main(String[] args) {
+    String time = saySystemTime();
+    System.out.println(time);
+  }
 
+  public static String sayHello(int num) {
+    if (num > 0 && num < 5) {
+
+      return "Es ist Nacht";
+
+    } else if (num > 6 && num < 10) {
+      return "Guten Morgen";
+
+    } else if (num > 11 && num < 14) {
+      return "Mahlzeit";
+
+    } else if (num > 15 && num < 19) {
+      return "Guten Tag";
+
+    } else if (num > 20 && num < 23) {
+      return "Gute Nacht";
+
+    } else if (num > 0 && num < 23) {
+      return "Falsche Eingabe";
+
+    } else {
+      return "Falsche Eingabe";
+    }
+  }
+
+  public static String saySystemTime() {
+    LocalDateTime time = LocalDateTime.now();
+    int hour = time.getHour();
+    return sayHello(hour);
+  }
+}

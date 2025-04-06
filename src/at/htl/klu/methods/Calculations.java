@@ -1,25 +1,28 @@
-package at.htl.klu.methods;
-
-import java.util.Arrays;
+import java.util.Random;
 
 public class Calculations {
-    public static void main(String[] args) {
-        int[] arr = new int[10];
-        int max = Integer.MIN_VALUE;
-        int min = Integer.MAX_VALUE;
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = Math.getRandomInt(1, 100);
-            if (arr[i] > max) {
-                max = arr[i];
-            }
-            if (arr[i] < min) {
-                min = arr[i];
-            }
 
-        }
+  public static int getAbsValue() {
+    int min = Integer.MAX_VALUE;
+    int max = Integer.MIN_VALUE;
 
-        System.out.println(Arrays.toString(arr));
-        int absValue = Math.getAbs(max - min);
-        System.out.println(absValue);
+    Random rnd = new Random();
+    int[] arr = new int[10];
+    for (int i = 0; i < arr.length; i++) {
+      arr[i] = rnd.nextInt(1, 101);
     }
+    for (int i = 0; i < arr.length; i++) {
+      if (arr[i] > max) {
+        max = arr[i];
+      }
+    }
+    for (int i = 0; i < arr.length; i++) {
+      if (arr[i] < min) {
+        min = arr[i];
+      }
+    }
+
+    int diff = max - min;
+    return HtlMath.getAbs(diff);
+  }
 }
