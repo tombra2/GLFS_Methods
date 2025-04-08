@@ -1,5 +1,4 @@
 import java.util.Random;
-import javax.management.monitor.CounterMonitor;
 
 public class HtlArrayUtils {
 
@@ -30,6 +29,17 @@ public class HtlArrayUtils {
       }
     }
     return max;
+  }
+  public static int getMaxIdx(int[] bar) {
+    int max = Integer.MIN_VALUE;
+    int idx = 0;
+    for (int i = 0; i < bar.length; i++) {
+      if (bar[i] > max) {
+        max = bar[i];
+        idx = i;
+      }
+    }
+    return idx;
   }
 
   public static int getSum(int[] arr) {
