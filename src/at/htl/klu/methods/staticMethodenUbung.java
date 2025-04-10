@@ -22,6 +22,7 @@ public class staticMethodenUbung {
     String str = "Thomas1234";
     System.out.println(countNumerics(str));
     System.out.println(solve("1 + 1"));
+    System.out.println(generatePadding("hallo", '#', 5, false));
   }
 
   public static int calcSum(int a, int b, int c) { return a + b + c; }
@@ -154,13 +155,20 @@ public class staticMethodenUbung {
   }
   public static String generatePadding(String s, char padding, int count,
                                        boolean right) {
-    String str = "";
     String add = "";
+    String str = "";
     if (right == true) {
       for (int i = 0; i < count; i++) {
         add += padding;
       }
-      return str;
+      str = s + add;
+
+    } else {
+      for (int i = 0; i < count; i++) {
+        add += padding;
+      }
+      str = add + s;
     }
+    return str;
   }
 }
