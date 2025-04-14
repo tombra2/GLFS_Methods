@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Collections;
 
 public class VorTestGLFS {
   public static void main(String[] args) {
@@ -17,6 +18,11 @@ public class VorTestGLFS {
     System.out.println(sentenceCount("Hallo. Das. ist ein Satz! "));
     System.out.println("--------------------------------------");
     System.out.println(countWords("Hallo hier wird jedes wort gezählt."));
+
+    String str = runLengthEncoder("FFFFGGHHHHH");
+    System.out.println(str);
+    String dec = runLenghtDecoder(str);
+    System.out.println(dec);
   }
 
   public static String isEquals(int[] arr, int[] arrToo) {
@@ -78,5 +84,43 @@ public class VorTestGLFS {
       }
     }
     return wordCount;
+  }
+  public static String runLengthEncoder(String str) { // FFFF
+    StringBuilder result = new StringBuilder();       //" "
+    int count = 1;                                    // 1
+
+    char[] arr = str.toCharArray(); // [F,F,F,F]
+    for (int i = 0; i < arr.length; i++) {
+      char c = arr[i]; // c =F  idx =0
+      if (i + 1 < arr.length &&
+          c == arr[i + 1]) { // 0+1 kleiner als arr.length (4) und c == arr[i+1]
+        count++; // Wenn c das gleich ist wie der nächste value im nächsten idx
+                 // dann ++
+      } else {
+        result.append(count).append(
+            c);    // Wenn c also nicht gleich arr[i] ist dannheißt das das die
+                   // folge fertig ist, wird dann hinzugefügt
+        count = 1; // count wieder auf eins gestzt
+      }
+    }
+
+    return result.toString();
+  }
+
+  public static String runLenghtDecoder(String str) {
+    StringBuilder result = new StringBuilder();
+    char[] arr = str.toCharArray();
+    int count = 0;
+    for (char c : arr) {
+      if (Character.isDigit(c)) {
+        count = 10 * count + Character.getNumericValue(c);
+      } else {
+        result.append(
+            String.join("", Collections.nCopies(count, String.valueOf(c))));
+        count = 0;
+      }
+    }
+
+    return result.toString();
   }
 }
