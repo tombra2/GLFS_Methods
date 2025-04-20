@@ -1,3 +1,5 @@
+package at.htl.klu.methods;
+
 import java.util.Arrays;
 
 public class ArrayTest {

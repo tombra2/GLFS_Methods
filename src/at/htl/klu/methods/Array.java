@@ -1,3 +1,5 @@
+package at.htl.klu.methods;
+
 public class Array {
 
   public static boolean isSorted(int[] arr) {
@@ -42,5 +44,4 @@ public class Array {
     return arr;
   }
 
-  public static quickSort() {}
 }

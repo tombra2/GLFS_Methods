@@ -3,13 +3,13 @@ package at.htl.klu.methods;
 import java.util.Arrays;
 
 public class MyMathUtilities {
-  public static void main(String[] args) {
+ /* public static void main(String[] args) {
     int min = getMin(new int[] {1, 2, 3, 4, 5});
     int[] rnd = DiffOfArrays1.getRandomArr(10, 20, 30, 40);
     System.out.println(Arrays.toString(rnd));
     int count = getDiffCountElements(20, 40, rnd);
     System.out.println(count);
-  }
+  }*/
 
   public static int getMin(int[] a) {
     int min = Integer.MAX_VALUE;
